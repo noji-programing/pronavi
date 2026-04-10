@@ -22,11 +22,11 @@
 
 .area_title{
     text-align: center;
-    margin-bottom: 60px;
-    margin-inline: auto;
+    margin: 50px auto 60px auto;
+    // margin-inline: auto;
     width: 60%;
 
-    @include m.sp{
+    @include m.tb{
         width: 100%;
     }
     
@@ -71,7 +71,7 @@
         p{
             font:var(--ff-jp_normal);
 
-            @include m.sp{
+            @include m.tb{
                 font:var(--ff-jp_sp_normal);
             }
         }
@@ -84,7 +84,7 @@
     position: relative;
     padding-left: 15px;
 
-    @include m.sp{
+    @include m.tb{
         font:var(--ff-jp_sp_title);
         margin-bottom: 30px;
     }
@@ -124,6 +124,10 @@
                 overflow: hidden;
                 position: relative;
 
+                @include m.tb{
+                    width: calc(100vw / 1.5);
+                }
+
                 p{
                     width: 100%;
                     height: 100%;
@@ -140,10 +144,6 @@
                     p{
                         transform:scale(1);
                     }
-                }
-
-                @include m.sp{
-                    width: calc(280vw / 3);
                 }
             }
         }
@@ -273,13 +273,17 @@
 .family_kids_area{
     .area_title_h{
         font-size: 36px;
+
+        @include m.tb{
+            font-size: 32px;
+        }
     }
 }
 
 .family_area_content_text{
     font: var(--ff-jp_normal);
 
-    @include m.sp{
+    @include m.tb{
         font: var(--ff-jp_sp_normal);
     }
 
@@ -289,7 +293,7 @@
         position: relative;
         padding-left: 15px;
 
-        @include m.sp{
+        @include m.tb{
             font: var(--ff-jp_sp_title);
             margin-bottom: 15px;
             width: 100%;
@@ -550,7 +554,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 90px;
-        column-gap: 2%; 
+        column-gap: 4%; 
         padding: 20px 20px;
         
         @include m.tb{

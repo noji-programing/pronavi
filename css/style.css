@@ -50,6 +50,12 @@ body {
 section {
   /* ヘッダーの高さ分 */
   scroll-margin-top: 80px;
+  margin-top: 80px;
+}
+@media (max-width: 800px) {
+  section {
+    margin-top: 40px;
+  }
 }
 
 img {
@@ -74,19 +80,9 @@ a {
   margin-inline: auto;
   width: 100%;
 }
-@media (max-width: 800px) {
-  .wrapper {
-    padding: 0 16px;
-  }
-}
 
 .inner {
-  margin-top: 100px;
-}
-@media (max-width: 800px) {
-  .inner {
-    margin-top: 50px;
-  }
+  padding-inline: 3%;
 }
 
 header {
@@ -143,6 +139,51 @@ header {
   display: none;
 }
 
+.advertisements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  background-color: var(--black-color);
+  padding: 80px 100px;
+  /* 各カラムが中身の最大幅になり、余ったスペースは右側に寄せられる */
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+  /* 左寄せにする（これがないと隙間ができる場合があります） */
+  justify-content: start;
+}
+.advertisements .advertise {
+  max-width: 500px;
+  border: 1px solid var(--white-color);
+}
+.advertisements .advertise a img {
+  max-height: 150px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding-inline: 80px;
+  padding-block: 80px 40px;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(to top left, rgba(255, 0, 0, 0.7) 0%, rgb(0, 0, 0) 100%), linear-gradient(var(--black-color), var(--black-color));
+}
+.footer-nav li {
+  border-right: 1px solid var(--white-color);
+  padding-inline: 70px;
+  height: 20px;
+  line-height: 20px;
+}
+.footer-nav li a {
+  font: var(--ff-jp_sp_normal);
+  color: var(--white-color);
+}
+.footer-nav li:last-child {
+  border-right: none; /* 最後の要素だけ線を消す */
+}
+
 .section_title {
   font: var(--ff-en_title);
   color: var(--white-color);
@@ -166,11 +207,10 @@ header {
 
 .area_title {
   text-align: center;
-  margin-bottom: 60px;
-  margin-inline: auto;
+  margin: 50px auto 60px auto;
   width: 60%;
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .area_title {
     width: 100%;
   }
@@ -211,7 +251,7 @@ header {
 .area_title p {
   font: var(--ff-jp_normal);
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .area_title p {
     font: var(--ff-jp_sp_normal);
   }
@@ -223,7 +263,7 @@ header {
   position: relative;
   padding-left: 15px;
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .content_title {
     font: var(--ff-jp_sp_title);
     margin-bottom: 30px;
@@ -262,6 +302,11 @@ header {
   overflow: hidden;
   position: relative;
 }
+@media (max-width: 800px) {
+  .gr_gallery .gr_gallery_pictures .slide-items li {
+    width: 66.6666666667vw;
+  }
+}
 .gr_gallery .gr_gallery_pictures .slide-items li p {
   width: 100%;
   height: 100%;
@@ -275,11 +320,6 @@ header {
 }
 .gr_gallery .gr_gallery_pictures .slide-items li:hover p {
   transform: scale(1);
-}
-@media (max-width: 545px) {
-  .gr_gallery .gr_gallery_pictures .slide-items li {
-    width: 93.3333333333vw;
-  }
 }
 
 @-webkit-keyframes scroll-left {
@@ -388,11 +428,16 @@ header {
 .family_kids_area .area_title_h {
   font-size: 36px;
 }
+@media (max-width: 800px) {
+  .family_kids_area .area_title_h {
+    font-size: 32px;
+  }
+}
 
 .family_area_content_text {
   font: var(--ff-jp_normal);
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .family_area_content_text {
     font: var(--ff-jp_sp_normal);
   }
@@ -403,7 +448,7 @@ header {
   position: relative;
   padding-left: 15px;
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .family_area_content_text .family_area_content_title {
     font: var(--ff-jp_sp_title);
     margin-bottom: 15px;
@@ -627,8 +672,8 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 90px;
-  -moz-column-gap: 2%;
-       column-gap: 2%;
+  -moz-column-gap: 4%;
+       column-gap: 4%;
   padding: 20px 20px;
 }
 @media (max-width: 800px) {
@@ -1245,9 +1290,18 @@ header {
   letter-spacing: 0.05em;
 }
 
-.btn-faq {
+.faq-area {
+  margin-top: 0;
+}
+.faq-area .btn-faq {
   color: var(--red-color);
   border-bottom: var(--red-color) solid 1px;
+  font: var(--ff-jp_normal);
+}
+@media (max-width: 800px) {
+  .faq-area .btn-faq {
+    font: var(--ff-jp_sp_normal);
+  }
 }
 
 .faq-modal {
@@ -1279,7 +1333,7 @@ header {
   font: var(--ff-jp_subtitle);
   background-color: var(--grey-color);
 }
-@media (max-width: 545px) {
+@media (max-width: 800px) {
   .open .faq-modal .faq-lists .faq .question {
     border-radius: 9px;
     font: var(--ff-jp_sp_title);
@@ -1288,7 +1342,13 @@ header {
 .open .faq-modal .faq-lists .faq .question .question-text {
   display: inline-block;
   padding-inline: 65px 60px;
-  line-height: 60px;
+  padding-block: 12px;
+  text-align: left;
+}
+@media (max-width: 800px) {
+  .open .faq-modal .faq-lists .faq .question .question-text {
+    padding-block: 18px;
+  }
 }
 .open .faq-modal .faq-lists .faq .question .question-icon {
   position: absolute;

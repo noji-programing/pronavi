@@ -584,9 +584,18 @@
     letter-spacing: 0.05em;
 }
 
-.btn-faq{
-    color: var(--red-color);
-    border-bottom: var(--red-color) solid 1px;
+.faq-area{
+    margin-top: 0;
+    
+    .btn-faq{
+        color: var(--red-color);
+        border-bottom: var(--red-color) solid 1px;
+        font: var(--ff-jp_normal);
+
+        @include m.tb{
+            font:var(--ff-jp_sp_normal);
+        }
+    }
 }
 
 .faq-modal{
@@ -622,7 +631,7 @@
                     font: var(--ff-jp_subtitle);
                     background-color: var(--grey-color);
                     
-                    @include m.sp{
+                    @include m.tb{
                         border-radius: 9px;
                         font: var(--ff-jp_sp_title);
                     }
@@ -630,7 +639,12 @@
                     .question-text{
                         display: inline-block;
                         padding-inline: 65px 60px;
-                        line-height:60px;
+                        padding-block: 12px;
+                        text-align: left;
+
+                        @include m.tb{
+                            padding-block: 18px;
+                        }
                     }
 
                     .question-icon{
